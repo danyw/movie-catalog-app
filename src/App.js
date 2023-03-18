@@ -7,6 +7,7 @@ import Favourites from "./Pages/Favourites";
 import AboutUs from "./Pages/AboutUs";
 import Header from "./Components/Header";
 import { UserProvider } from "./Context/UserProvider";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
