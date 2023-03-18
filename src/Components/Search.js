@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect, useRef } from 'react';
 import { searchMovies } from '../APIs/moviesAPI';
+import { searchMoviesAPI } from '../APIs/moviesAPI';
 
 
 const Search = () => {
@@ -16,8 +17,7 @@ const Search = () => {
    
   const handleSearch = async () => {
    try {
-     const results = await searchMovies(search);
-     console.log(results);
+     const results = await searchMoviesAPI(search);
    } catch (error) {
      console.error(error);
    }
