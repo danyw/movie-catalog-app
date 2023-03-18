@@ -8,7 +8,8 @@ const Search = () => {
            <input type="text" class="searchTerm" placeholder="Type a movie title or actor's name"/>
            <button type="submit" class="searchButton">
              {/* <i class="fa fa-search"></i> */}
-             <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+             {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
+             Search
             
           </button>
         </div>
