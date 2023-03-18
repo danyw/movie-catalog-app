@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const SERVER = process.env.REACT_APP_SERVER;
 
-export const searchMovies = async (search) => {
+export const searchMoviesAPI = async (search) => {
 
 try {
-    const response = await axios.get(`${SERVER}/search/`);
-return console.log(response.data.results);
+    const response = await axios.get(`${SERVER}/movielist`, { search });
+return console.log(response.data);
 } catch (error) {
     console.error(error);
 }
