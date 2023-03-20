@@ -1,35 +1,30 @@
-import React, { useState } from 'react'
-import CardImage from './Card'
-// import './CardContainer.css'
+import React, { useEffect, useState } from "react";
+import CardImage from "./Card";
+import "../Styles/cardContainer.css";
 
-function CardContainer() {
-  const [movies, setMovies] = useState([
-    'movies1',
-    'movie2',
-    'movie3',
-    'movie4',
-  ])
+function CardContainer({ movies, updateMovies }) {
+  useEffect(() => {
+    console.log(movies);
+  }, [movies]);
   return (
     <div
       style={{
-        margin: '20px 20px',
+        margin: "2rem auto 2rem auto",
       }}
     >
-      <h2>List of Movies</h2>
       <div
+        className="cardContainer"
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          gap: '10px',
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "10px",
         }}
       >
-        {movies.map((m, index) => (
-          <CardImage key={index} movies={m} />
-        ))}
+        {movies.map((m, index) => (m.poster_path !== null ? <CardImage key={index} movies={m} /> : null))}
+        {/* skiping movies with no poster for better experience */}
       </div>
     </div>
-  )
+  );
 }
 
-export default CardContainer
+export default CardContainer;

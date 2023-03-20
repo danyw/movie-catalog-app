@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect, useRef } from "react";
-import { searchMovies } from "../APIs/moviesAPI";
 import { searchMoviesAPI } from "../APIs/moviesAPI";
+import "../Styles/search.css";
 
-const Search = () => {
+const Search = ({ updateMovies }) => {
   const [search, setSearch] = useState("");
   const searchInputRef = useRef(null);
 
@@ -13,9 +13,11 @@ const Search = () => {
 
   useEffect(() => {
     if (search === "") return;
-    searchMoviesAPI(search);
-  }, [search]);
-
+    searchMoviesAPI(search).then((data) => {
+      updateMovies(data.results);
+    });
+  }, [search, updateMovies]);
+  //TODO: is there a beter way to do this? Had to use a callback function to pass the data to the parent component. Otherwise, an infinite loop was created.
   return (
     <div class="wrap">
       <div class="search">
