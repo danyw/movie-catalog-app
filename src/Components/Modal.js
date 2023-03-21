@@ -20,6 +20,7 @@ function MyVerticallyCenteredModal(props) {
     });
   }, [props.id, props.isModalOn]);
 
+ 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>

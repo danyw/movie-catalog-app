@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import './profile.css'
+import { useUser, useUserUpdate } from "../Context/UserProvider";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0()
-console.log(user);
+  const updateUser = useUserUpdate();
+
+
+useEffect(() => {
+  if (isAuthenticated) {
+    updateUser(user.sub);
+  }
+  
+}, [isAuthenticated, updateUser, user]);
+//TODO is it in the infinite loop?
   if (isLoading) {
     return <div>Loading ...</div>
   }

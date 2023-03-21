@@ -23,7 +23,16 @@ export const getCreditsByIdAPI = async (id) => {
   }
 };
 
-export const addToFav = () => {};
+export const addToFav = (data) => {
+  
+  try {
+  axios.post('http://localhost:5000/movielist/add', data)
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+//TODO replace on the backend checking if the movie name is already in the database to based on the id
+};
 
 export const getFav = () => {};
 
