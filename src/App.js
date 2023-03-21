@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <UserProvider>
         <Header />
-        <h1>Testing</h1>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
