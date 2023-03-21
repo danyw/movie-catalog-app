@@ -11,18 +11,29 @@ const Header = () => {
   const { isAuthenticated } = useAuth0();
   return (
     <Container>
-      <Navbar bg="dark" variant="dark">
+      <Navbar
+        bg="dark"
+        variant="dark"
+      >
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} width="30" height="30" alt="Our Logo" />
+            <img
+              src={logo}
+              width="30"
+              height="30"
+              alt="Our Logo"
+            />
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/fav">Favourites</Nav.Link>
-            <Nav.Link href="/about">ABout Us</Nav.Link>
+            <Nav.Link href="/about">About Us</Nav.Link>
           </Nav>
 
-          <Nav className="justify-content-end" activeKey="/home">
+          <Nav
+            className="justify-content-end"
+            activeKey="/home"
+          >
             {!isAuthenticated && (
               <Nav.Item>
                 <Nav.Link href="/home">
