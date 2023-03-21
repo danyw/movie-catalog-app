@@ -23,17 +23,24 @@ export const getCreditsByIdAPI = async (id) => {
   }
 };
 
-export const addToFav = (data) => {
-  
+export const addToFav = async (data) => {
   try {
-  axios.post('http://localhost:5000/movielist/add', data)
+    axios.post("http://localhost:5000/movielist/add", data);
   } catch (error) {
     console.error(error);
     return null;
   }
-//TODO replace on the backend checking if the movie name is already in the database to based on the id
+  //TODO replace on the backend checking if the movie name is already in the database to based on the id
 };
 
-export const getFav = () => {};
+export const getFav = async (userId) => {
+  try {
+    const response = await axios.get(`http://localhost:5000/favmovieslist/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
 
 export const deleteFromFav = () => {};

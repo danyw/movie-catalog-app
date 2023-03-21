@@ -20,8 +20,8 @@ function CardContainer({ movies, updateMovies }) {
           gap: "10px",
         }}
       >
-        {movies.map((m, index) => (m.poster_path !== null ? <CardImage key={index} movies={m} /> : null))}
-        {/* skiping movies with no poster for better experience */}
+        {movies.map((m, index) => (m.poster_path !== null ? <CardImage key={index} movies={m} /> : null))} 
+         {/* skiping movies with no poster for better experience */}
       </div>
     </div>
   );

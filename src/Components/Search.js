@@ -4,6 +4,7 @@ import { searchMoviesAPI } from "../APIs/moviesAPI";
 import "../Styles/search.css";
 
 const Search = ({ updateMovies }) => {
+  
   const [search, setSearch] = useState("");
   const searchInputRef = useRef(null);
 
