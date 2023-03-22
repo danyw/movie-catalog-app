@@ -6,6 +6,8 @@ import LogoutButton from "../Auth/Logout";
 import Profile from "../Auth/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Assets/Logo.png";
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   const { isAuthenticated } = useAuth0();
@@ -17,9 +19,9 @@ const Header = () => {
             <img src={logo} width="30" height="30" alt="Our Logo" />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/fav">Favourites</Nav.Link>
-            <Nav.Link href="/about">About Us</Nav.Link>
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/fav">Favourites</Nav.Link>
+            <Nav.Link as={Link} to="/about">About Us</Nav.Link>
           </Nav>
 
           <Nav className="justify-content-end" activeKey="/home">
